@@ -1,9 +1,16 @@
-import Form2 from "./Component/FromHandle/From2.jsx"
+import { useState } from 'react'
+import Child from './Component/Shifting_Lift/Child.jsx'
 function App() {
+
+  const [count, setCount] = useState(0)
+  const handel = () => {
+    setCount((prev) => { return prev + 1 })
+  }
   return (
     <>
-    {/* <Form /> */}
-    <Form2 />
+      <Child onReceiveData={handel} >
+        <h1>{count}</h1>
+      </Child>
     </>
   )
 }
